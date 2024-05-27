@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+.bellefair-regular {
+  font-family: 'Bellefair', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.barlow-condensed-light {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.barlow-condensed-regular {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.barlow-condensed-medium {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0); /* Transparan untuk terlihat saat scroll */
+  transition: background 0.3s;
+  padding: 16px; /* Menambah padding agar konten navbar tidak terlalu rapat */
+}
+
+header.navbar.scrolled {
+  background: rgba(0, 0, 0, 0); /* Latar belakang lebih gelap saat di-scroll */
+}
+
+.hmb-toggle {
+  display: none;
+  height: 25px;
+  z-index: 2;
+  text-decoration: none;
+  position: absolute;
+  top: -5px;
+  right: -6px;
+  opacity: 1;
+  cursor: pointer;
+  z-index: 3;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+  gap: 2px;
+  list-style: none;
+  text-align: center;
+}
+
+@media (max-width: 705px) {
+  html {
+    font-size: 70.5%;
+  }
+  .header {
+    justify-content: flex-end;
+  }
+  .hmb-toggle {
+    display: flex;
+    right: 20px;
+    top: 44px;
+  }
+
+  ul {
+    display: flex;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 98vh;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: all 0.8s;
+    opacity: 0;
+  }
+
+  .slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-content {
+  padding-top: 80px; /* Padding agar konten utama tidak tertutup navbar */
+}
